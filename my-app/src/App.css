@@ -1,3 +1,6 @@
+/* Need to style using bootstrap docs OR break up into different css docs per component...
+NOT AT ALL STYLED-- this is the boiler CSS from create-react-app */
+
 .App {
   text-align: center;
 }
