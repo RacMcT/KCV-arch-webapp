@@ -1,5 +1,5 @@
 import React from 'react';
-import { getUser, removeUserSession } from './Utils/Common';
+import { getUser, removeUserSession } from '../utils/Common';
  
 function Dashboard(props) {
   const user = getUser();
