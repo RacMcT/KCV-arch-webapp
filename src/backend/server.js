@@ -51,7 +51,7 @@ app.use(function (req, res, next) {
 // request handlers
 app.get('/', (req, res) => {
   if (!req.user) return res.status(401).json({ success: false, message: 'Invalid user to access it.' });
-  res.send('Welcome to the Node.js Tutorial! - ' + req.user.name);
+  res.send('Welcome to the Login Area! - ' + req.user.name);
 });
  
  
@@ -117,4 +117,21 @@ app.get('/verifyToken', function (req, res) {
  
 app.listen(port, () => {
   console.log('Server started on: ' + port);
+});
+
+/* GET home page. */
+app.get('/', function(req, res, next) {
+  res.render('contact-us', { title: 'Contact-Us' });
+});
+ 
+app.post('./frontend/registration', function(req, res, next) {
+  let username = req.body.username;
+  let password = req.body.password;
+
+  var sql = 'INSERT INTO userinfo (user, password) VALUES ("${username}", "${password}"';
+  db.query(sql, function(err, result) {
+    if (err) throw err;
+    console.log('record inserted');
+    res.redirect('/');
+  });
 });
