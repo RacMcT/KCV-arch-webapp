@@ -1,4 +1,4 @@
-// need to connect to my .env data?!
+// need to connect to my .env data?!-- found code structure below from tutorial docs online
 
 var mysql = require('mysql');
 var conn = mysql.createConnection({

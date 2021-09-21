@@ -28,7 +28,7 @@ function Login(props) {
       Login<br /><br />
       <div>
         Username<br />
-        <input type="text" {...username} autoComplete="new-password" />
+        <input type="text" {...username} autoComplete="new-username" />
       </div>
       <div style={{ marginTop: 10 }}>
         Password<br />

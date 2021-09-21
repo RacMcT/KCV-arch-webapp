@@ -18,10 +18,12 @@ const navbar = (props) => {
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="nav-links">
-      <Nav.Link href="./excavhist">Excavation History</Nav.Link>
-      <Nav.Link href="./about">About</Nav.Link>
-      <Nav.Link href="./research">Ongoing Research</Nav.Link>
-      <Nav.Link href="./photogallery">Photo Gallery</Nav.Link>
+      <Nav.Link href="./Excavhist">Excavation History</Nav.Link>
+      <Nav.Link href="./About">About Archaeology</Nav.Link>
+      <Nav.Link href="./Oneota">Oneota Prehistory</Nav.Link>
+      <Nav.Link href="./Research">Ongoing Research</Nav.Link>
+      <Nav.Link href="./PhotoGallery">Photo Gallery</Nav.Link>
+      <Nav.Link href="./Technology">Technology at Site</Nav.Link>
     </Nav>
     <Nav>
       <Nav.Link href="/login">Login</Nav.Link>
