@@ -121,7 +121,7 @@ app.listen(port, () => {
 
 /* GET home page. */
 app.get('/', function(req, res, next) {
-  res.render('contact-us', { title: 'Contact-Us' });
+  res.render('Home', { title: 'Home' });
 });
  
 app.post('./frontend/registration', function(req, res, next) {
@@ -135,3 +135,4 @@ app.post('./frontend/registration', function(req, res, next) {
     res.redirect('/');
   });
 });
+
