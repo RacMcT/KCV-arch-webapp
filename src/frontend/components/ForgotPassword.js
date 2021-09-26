@@ -6,6 +6,7 @@ import TextField from '@material-ui/core/TextField';
 import axios from 'axios';
 
 import Navbar from '../components/Navbar';
+import { render } from '@testing-library/react';
 
 // import {
 //   LinkButtons,
@@ -26,7 +27,7 @@ class ForgotPassword extends Component {
     super();
 
     this.state ={
-      email: ''
+      email: '',
       showError: false,
       messageFromServer: '',
     };
@@ -50,13 +51,82 @@ sendEmail = e => {
     })
     .then(response => {
       console.log(response.data);
-      
+      if (response.data === 'email not in database'){
+        this.setState({
+        showError: true,
+        messageFromServer: '',
+        });
+      } else if (response.data === 'recovery email sent'){
+        this.setState({
+          showError: false,
+          messageFromServer: 'recovery email sent',
+        });
+      }
 
     })
-    
-    
-    )
-  }
+
+    .catch(error => {
+      console.log(error.data);
+    });
 }
 
+};
+
+render() {
+  const{ email, messageFromServer, showNullError, showError} = this.state;
+
+// make form in bootstrap and import?
+// import buttons from bootstrap and import?
+
+  return(
+    <div>
+      <Navbar></Navbar>
+      <form className="profile-form" onSubmit={this.sendEmail}>
+        <TextField
+        style={inputStyle}
+        id="emali"
+        label="email"
+        value={email}
+        onChange={this.handleChange('email')}
+        placeholder="Email Address"
+        >
+        </TextField>
+
+      <SubmitButtons
+      buttonStyle={forgotButton}
+      buttonText={'Send Password Reset Email'}
+      />
+      </form>
+
+    {showNullError && (
+      <div>
+        <p>The email address cannot be null.</p>
+        </div>
+    )}
+    {showError && (
+      <div>
+        <p>
+          That email address is not recognized. Please try again or register for a new account. </p>
+        <LinkButtons
+        buttonText={'Register'}
+        buttonStyle={registerButton}
+        link={'/Registration'}
+        />
+        </div>
+    )}
+
+    {messageFromServer==='recovery email sent' &&(
+      <div>
+        <h3>Password Reset Email Sucessfully Sent!</h3>
+        </div>
+    )}
+    <LinkButtons
+    buttonText={'Go to Home Page'}
+    buttonStyle={homeButton}
+    link={'/Home'}
+    />
+    </div>
+  );
 }
+
+export default ForgotPassword;
