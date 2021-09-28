@@ -6,19 +6,19 @@ class Users extends Component {
         super(props);
         this.state = { userInfo: [] };
     }
-callUserInfoAPI
 
 // put the fetch call outside the component and only put in through props via either redux or take it outside a componet
 // can create an api folder with all the api's to the backend- will still be a fetch, but the component itself doesn't have the fetch()
 // comoponent- everything they need to display/know comes from their props
 
-    // callUserInfo() {
+    callUserInfo() {
+        callUserInfoAPI
     //     fetch("http://localhost:8080/users")
     //         .then(res => res.json())
             
     //         .then(res => this.setState({ userInfo: res }))
     //         .catch(err => console.log(err));
-    // }
+     }
 
     componentDidMount() {
         this.callUserInfo();
@@ -37,5 +37,5 @@ callUserInfoAPI
     }
 }
 
-  export default Users
+export default Users
 

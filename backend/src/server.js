@@ -28,6 +28,31 @@ app.get('/users', (req, res) => { //specifying the api
   )
 });
 
+//Registration Form Data to then get from the form, and then insert into the database
+
+app.post('/registration', function(req, res) {
+  const username = req.body.username;
+  const password = req.body.password;
+  const email = req.body.email;
+
+con.query(`INSERT INTO userinfo (username = ? , email = ? , password = ? `), 
+[username , email, password] ,  
+function(error, results) {
+
+console.log(username);
+if (error) {
+  throw error
+}
+    res.send('user registered');
+
+  }
+});
+
+
+
+
+
+
 app.listen(PORT, ()=>{
   console.log(`Running on Port: ${PORT}`)
 });
