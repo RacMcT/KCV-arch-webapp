@@ -12,6 +12,7 @@
   },
   "scripts": {
     "build": "docker build . -t kcv-backend",
-    "start": "docker run -p 5000:8080 -d kcv-backend"
+    "start": "docker run -p 5000:8080 -d kcv-backend",
+    "local": "node src/server.js"
   }
 }

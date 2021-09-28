@@ -3,8 +3,9 @@ import {BrowserRouter, Switch, Route, NavLink} from 'react-router-dom'
 import axios from 'axios';
 
 import Login from './components/Login';
-import Dashboard from './components/Dashboard'
-import Home from './components/Home'
+import Dashboard from './components/Dashboard';
+import Home from './components/Home';
+import Users from './components/users'
 
 import PrivateRoute from './utils/PrivateRoute'
 import PublicRoute from './utils/PublicRoute'
@@ -35,6 +36,7 @@ function App() {
  
   return (
     <div className="App">
+      <Users/>
       <BrowserRouter>
         <div>
           <div className="header">

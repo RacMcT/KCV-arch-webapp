@@ -1,15 +1,16 @@
 'use strict';
-require('dotenv').config()
+require('dotenv').config();
+const cors = require('cors');
 const express = require('express');
 const conn = require('./database');
 
-
 // Constants
-const PORT = 8080;
-const HOST = '0.0.0.0';
+const PORT = process.env.PORT || 8080;
+// const HOST = '0.0.0.0'; **getting rid of for testing (9/27)
 
 // App
 const app = express();
+app.use(cors());
 app.get('/', (req, res) => { //specifying the api
   res.send('Hello World');  // sending back a response (the '/' means if no url is specified by frontend say, "hello world")
 }); 
@@ -22,10 +23,11 @@ app.get('/users', (req, res) => { //specifying the api
       if(error){ 
         throw error
       }
-      res.send(results); //sending back a response from database (res=response)
+      res.json(results); //sending back a response from database (res=response; sending db information back as json notation)
     }
   )
 });
 
-app.listen(PORT, HOST);
-console.log(`Running on http://${HOST}:${PORT}`);
+app.listen(PORT, ()=>{
+  console.log(`Running on Port: ${PORT}`)
+});
