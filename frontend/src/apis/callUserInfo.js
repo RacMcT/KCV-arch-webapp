@@ -1,6 +1,3 @@
-import React from "react";
-
-
 function callUserInfo() {
     fetch("http://localhost:8080/users")
         .then(res => res.json())
@@ -9,7 +6,5 @@ function callUserInfo() {
         .catch(err => console.log(err));
   };
 callUserInfo();
-
-
 
 export default callUserInfoAPI;

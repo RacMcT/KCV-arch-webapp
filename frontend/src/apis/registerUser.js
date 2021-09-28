@@ -1,5 +1,3 @@
-
-
 fetch('/api/registerUser', { method: 'POST', 
 
 body: JSON.stringify(data), // data can be `string` or {object}!
