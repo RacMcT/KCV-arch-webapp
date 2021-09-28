@@ -35,7 +35,7 @@ app.post('/registration', function(req, res) {
   const password = req.body.password;
   const email = req.body.email;
 
-con.query(`INSERT INTO userinfo (username = ? , email = ? , password = ? `), 
+conn.query(`INSERT INTO userinfo (username = ? , email = ? , password = ? `), 
 [username , email, password] ,  
 function(error, results) {
 
