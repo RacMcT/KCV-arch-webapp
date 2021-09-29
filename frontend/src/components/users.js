@@ -11,14 +11,14 @@ class Users extends Component {
 // can create an api folder with all the api's to the backend- will still be a fetch, but the component itself doesn't have the fetch()
 // comoponent- everything they need to display/know comes from their props
 
-    callUserInfo() {
+    
         callUserInfoAPI
     //     fetch("http://localhost:8080/users")
     //         .then(res => res.json())
             
     //         .then(res => this.setState({ userInfo: res }))
     //         .catch(err => console.log(err));
-     }
+     
 
     componentDidMount() {
         this.callUserInfo();

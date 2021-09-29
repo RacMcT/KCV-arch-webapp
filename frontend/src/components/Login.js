@@ -1,21 +1,34 @@
-import React, { useState } from 'react';
-import { setUserSession } from '../utils/Common';
+import React, { useState, Component } from 'react';
 import LoginAPI from '..apis/login';
 
-function Login(props) {
+
+class Login extends Component {
+  Login(props) {
   const [loading, setLoading] = useState(false);
   const username = useFormInput('');
   const password = useFormInput('');
   const [error, setError] = useState(null);
- 
-LoginAPI
+}
+  getUserInfo() {
+  LoginAPI
+// handle button click of login form
+const handleLogin = () => {
+  setError(null);
+  setLoading(true);
+} 
 
-  // handle button click of login form
-  const handleLogin = () => {
-    setError(null);
-    setLoading(true);
-  }
+const useFormInput = initialValue => {
+  const [value, setValue] = useState(initialValue);
  
+  const handleChange = e => {
+    setValue(e.target.value);
+  return {
+    value,
+    onChange(handleChange)
+  }
+}
+
+}
   return (
     <div>
       Login<br /><br />
@@ -31,18 +44,9 @@ LoginAPI
       <input type="button" value={loading ? 'Loading...' : 'Login'} onClick={handleLogin} disabled={loading} /><br />
     </div>
   );
-}
- 
-const useFormInput = initialValue => {
-  const [value, setValue] = useState(initialValue);
- 
-  const handleChange = e => {
-    setValue(e.target.value);
-  }
-  return {
-    value,
-    onChange: handleChange
+  
+  
   }
 }
- 
-export default Login;
+
+export default Login
