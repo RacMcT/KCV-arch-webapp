@@ -1,52 +1,88 @@
-import React, { useState, Component } from 'react';
-import LoginAPI from '..apis/login';
+import React, { useState, Component } from "react";
+import loginApi from "../apis/login";
+// import LoginAPI from "..apis/login";
 
+function Login(props) {
+	const [loading, setLoading] = useState(false);
 
-class Login extends Component {
-  Login(props) {
-  const [loading, setLoading] = useState(false);
-  const username = useFormInput('');
-  const password = useFormInput('');
-  const [error, setError] = useState(null);
+	const [error, setError] = useState(null);
+
+	const [credentials, setCredentials] = useState({
+		username: "",
+		password: "",
+	});
+
+	function handleInputChanges(event) {
+		const { name, value } = event.target;
+		setCredentials((previousCredentials) => ({
+			...previousCredentials,
+			[name]: value,
+		}));
+		console.log(credentials);
+	}
+
+	function handleFormSubmit(event) {
+		event.preventDefault();
+		//e-zambrano github
+
+		loginApi(credentials)
+			.then((response) => {
+				console.log(response);
+				//send the user to another page
+			})
+			.catch((error) => setError("Something bad happend"));
+	}
+
+	return (
+		<form onSubmit={handleFormSubmit}>
+			<h3> Login</h3>
+			<br />
+			<h4>UserName</h4>
+			<input
+				type='text'
+				name='username'
+				required
+				onChange={handleInputChanges}
+			/>
+			<br />
+			<h4>Password</h4>
+			<input
+				type='password'
+				name='password'
+				required
+				onChange={handleInputChanges}
+			/>
+
+			{error && (
+				<>
+					<small style={{ color: "red" }}>{error}</small>
+					<br />
+				</>
+			)}
+			<br />
+			<button type='submit'>Submit</button>
+		</form>
+	);
 }
-  getUserInfo() {
-  LoginAPI
-// handle button click of login form
-const handleLogin = () => {
-  setError(null);
-  setLoading(true);
-} 
 
-const useFormInput = initialValue => {
-  const [value, setValue] = useState(initialValue);
- 
-  const handleChange = e => {
-    setValue(e.target.value);
-  return {
-    value,
-    onChange(handleChange)
-  }
-}
+//   getUserInfo() {
+//   // LoginAPI
+// // handle button click of login form
+// // const handleLogin = () => {
+// //   setError(null);
+// //   setLoading(true);
+// }
 
-}
-  return (
-    <div>
-      Login<br /><br />
-      <div>
-        Username<br />
-        <input type="text" {...username} autoComplete="new-username" />
-      </div>
-      <div style={{ marginTop: 10 }}>
-        Password<br />
-        <input type="password" {...password} autoComplete="new-password" />
-      </div>
-      {error && <><small style={{ color: 'red' }}>{error}</small><br /></>}<br />
-      <input type="button" value={loading ? 'Loading...' : 'Login'} onClick={handleLogin} disabled={loading} /><br />
-    </div>
-  );
-  
-  
-  }
-}
+// const useFormInput = initialValue => {
+//   const [value, setValue] = useState(initialValue);
 
-export default Login
+//   const handleChange = e => {
+//     setValue(e.target.value);
+//   return {
+//     value,
+//     onChange(handleChange)
+//   }
+// }
+// }
+
+export default Login;
