@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import registerUserAPI from "../apis/registerUserAPI";
+import RegisterAPI from "../apis/registerUser";
 
 function RegisterUser(props) {
 	const [loading, setLoading] = useState(false);
@@ -22,7 +22,7 @@ function RegisterUser(props) {
 	function handleFormSubmit(event) {
 		event.preventDefault();
 
-		RegisterApi(credentials)
+		RegisterAPI(registerCredentials)
 			.then((response) => {
 				console.log(response);
 				//send the user to another page
