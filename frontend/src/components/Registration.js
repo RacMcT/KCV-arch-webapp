@@ -1,61 +1,68 @@
-import React, { Component } from "react";
-import axios from "axios";
-// import registerUser from "..apis/registerUser";
+import React, { useState } from "react";
+import registerUserAPI from "../apis/registerUserAPI";
 
-class RegistrationForm extends Component {
-	constructor() {
-		super();
-		this.state = {
-			name: "",
-			password: "",
-			email: "",
-		};
+function RegisterUser(props) {
+	const [loading, setLoading] = useState(false);
+	const [error, setError] = useState(null);
+	const [registerCredentials, setRegisterCredentials] = useState({
+		username: "",
+		password: "",
+		email: "",
+	});
+
+	function handleInputChanges(event) {
+		const { name, value } = event.target;
+		setRegisterCredentials((previousRegisterCredentials) => ({
+			...previousRegisterCredentials,
+			[name]: value,
+		}));
+		console.log(registerCredentials);
 	}
 
-	// registerUserInfo() {
-	// 	registerUser;
-	// }
+	function handleFormSubmit(event) {
+		event.preventDefault();
 
-	onChange = (e) => {
-		/*
-      Because we named the inputs to match their
-      corresponding values in state, it's
-      super easy to update the state
-    */
-		this.setState({ [e.target.name]: e.target.value });
-	};
-
-	onSubmit = (e) => {
-		e.preventDefault();
-		// get our form data out of state
-		const { name, password, email } = this.state;
-
-		axios.post("/", { name, password, email }).then((result) => {
-			//access the results here....
-		});
-	};
-
-	render() {
-		const { name, password, email } = this.state;
-		return (
-			<form onSubmit={this.onSubmit}>
-				<input type='text' name='name' value={name} onChange={this.onChange} />
-				<input
-					type='text'
-					name='password'
-					value={password}
-					onChange={this.onChange}
-				/>
-				<input
-					type='text'
-					name='email'
-					value={email}
-					onChange={this.onChange}
-				/>
-				<button type='submit'>Submit</button>
-			</form>
-		);
+		RegisterApi(credentials)
+			.then((response) => {
+				console.log(response);
+				//send the user to another page
+			})
+			.catch((error) => setError("Something bad happend"));
 	}
+
+	return (
+		<form onSubmit={handleFormSubmit}>
+			<h3> Registration</h3>
+			<br />
+			<h4>UserName</h4>
+			<input
+				type='text'
+				name='username'
+				required
+				onChange={handleInputChanges}
+			/>
+			<br />
+			<h4>Password</h4>
+			<input
+				type='password'
+				name='password'
+				required
+				onChange={handleInputChanges}
+			/>
+			<br />
+			<h4>Email</h4>
+			<input type='email' name='email' required onChange={handleInputChanges} />
+
+			{error && (
+				<>
+					<small style={{ color: "red" }}>{error}</small>
+					<br />
+				</>
+			)}
+			<br />
+			<button type='submit'>Submit</button>
+		</form>
+	);
 }
 
-export default RegistrationForm;
+export default RegisterUser;

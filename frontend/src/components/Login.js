@@ -1,12 +1,9 @@
-import React, { useState, Component } from "react";
+import React, { useState } from "react";
 import loginApi from "../apis/login";
-// import LoginAPI from "..apis/login";
 
 function Login(props) {
 	const [loading, setLoading] = useState(false);
-
 	const [error, setError] = useState(null);
-
 	const [credentials, setCredentials] = useState({
 		username: "",
 		password: "",

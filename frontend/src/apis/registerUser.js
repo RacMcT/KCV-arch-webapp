@@ -1,11 +1,18 @@
-fetch('/api/registerUser', { method: 'POST', 
+import axios from "axios";
+// import { setUserSession } from "..utils/Common";
 
-body: JSON.stringify(data), // data can be `string` or {object}!
+function RegisterAPI(registerCredentials) {
+	return axios.post("http://localhost:8080/Registration", {
+		username: registerCredentials.username,
+		password: registerCredentials.password,
+		email: registerCredentials.email,
+	});
+}
 
-headers:{ 'Content-Type': 'application/json' } })
+export default RegisterAPI;
 
-.then(res => res.json())
-
-.catch(error => console.error('Error:', error))
-
-.then(response => console.log('Success:', response));
+// .then((response) => {})
+// .catch((error) => {
+// 	if (error.response.status === 401) setError(error.response.data.message);
+// 	else setError("Something went wrong. Please try again later.");
+// });
