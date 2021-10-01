@@ -33,7 +33,6 @@ function RegisterUser(props) {
 	return (
 		<form onSubmit={handleFormSubmit}>
 			<h3> Registration</h3>
-			<br />
 			<h4>UserName</h4>
 			<input
 				type='text'
@@ -41,7 +40,6 @@ function RegisterUser(props) {
 				required
 				onChange={handleInputChanges}
 			/>
-			<br />
 			<h4>Password</h4>
 			<input
 				type='password'
@@ -49,17 +47,13 @@ function RegisterUser(props) {
 				required
 				onChange={handleInputChanges}
 			/>
-			<br />
 			<h4>Email</h4>
 			<input type='email' name='email' required onChange={handleInputChanges} />
-
 			{error && (
 				<>
 					<small style={{ color: "red" }}>{error}</small>
-					<br />
 				</>
 			)}
-			<br />
 			<button type='submit'>Submit</button>
 		</form>
 	);

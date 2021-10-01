@@ -33,7 +33,7 @@ function Login(props) {
 	return (
 		<form onSubmit={handleFormSubmit}>
 			<h3> Login</h3>
-			<br />
+
 			<h4>UserName</h4>
 			<input
 				type='text'
@@ -41,7 +41,6 @@ function Login(props) {
 				required
 				onChange={handleInputChanges}
 			/>
-			<br />
 			<h4>Password</h4>
 			<input
 				type='password'
@@ -49,14 +48,11 @@ function Login(props) {
 				required
 				onChange={handleInputChanges}
 			/>
-
 			{error && (
 				<>
 					<small style={{ color: "red" }}>{error}</small>
-					<br />
 				</>
 			)}
-			<br />
 			<button type='submit'>Submit</button>
 		</form>
 	);
