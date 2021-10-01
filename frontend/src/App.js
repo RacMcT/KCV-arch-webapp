@@ -5,7 +5,7 @@ import axios from "axios";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
 import Home from "./pages/Home";
-import Users from "./components/users";
+import RegisterUser from "./components/Registration";
 
 import PrivateRoute from "./utils/PrivateRoute";
 import PublicRoute from "./utils/PublicRoute";
@@ -38,7 +38,6 @@ function App() {
 
 	return (
 		<div className='App'>
-			<Users />
 			<BrowserRouter>
 				<div>
 					<div className='header'>
@@ -58,6 +57,7 @@ function App() {
 						<Switch>
 							<Route exact path='/' component={Home} />
 							<PublicRoute path='/login' component={Login} />
+							<PublicRoute path='registration' component={RegisterUser} />
 							<PrivateRoute path='/dashboard' component={Dashboard} />
 						</Switch>
 					</div>

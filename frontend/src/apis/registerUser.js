@@ -2,7 +2,7 @@ import axios from "axios";
 // import { setUserSession } from "..utils/Common";
 
 function RegisterAPI(registerCredentials) {
-	return axios.post("http://localhost:8080/Registration", {
+	return axios.post("http://localhost:8080/register", {
 		username: registerCredentials.username,
 		password: registerCredentials.password,
 		email: registerCredentials.email,
