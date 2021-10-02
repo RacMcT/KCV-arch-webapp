@@ -4,97 +4,74 @@ import React from "react";
 // same as how "dashboard" was originally set up?!-- also check on how worked for JS-411 homework!
 // need to "componentify" this and pull out api calls once done for the mysql database
 
-class Notes extends React.Component{
-  constructor(props){
-    super(props)
-    this.state = {
-      isClicked: false,
-      input: "",
-      items: [],
-    };
-  }
+class Notes extends React.Component {
+	constructor(props) {
+		super(props);
 
-inputUpdate = (event) => {
-  this.setState({ input: event.target.value });
-  console.log(event.target.value);
-};
-formSubmit = (event) => {
-  event.preventDefault();
-  this.setState({
-    items: [...this.state.items, this.state.input],
-    input: "",
-  });
-  console.log("clicked")
-};
+		this.state = {
+			isClicked: false,
+			notes: [],
+			text: "",
+		};
+	}
 
-componentDidUpdate() {
-  console.log(this.state.input)
+	componentDidUpdate() {
+		console.log(this.state.text);
+	}
+
+	onClickHandler = () => {
+		this.setState({
+			isClicked: true,
+		});
+		console.log(this.state.isClicked);
+
+		this.setState({
+			notes: [
+				...this.state.notes,
+				{ id: this.state.notes.length + 1, text: this.state.text },
+			],
+			isClicked: false,
+			text: "",
+		});
+	};
+
+	handleClick = (evt, id) => {
+		console.log(id);
+		const foundIndex = this.state.notes.findIndex((note) => note.id === id);
+		const copy = [...this.state.notes];
+		copy.splice(foundIndex, 1);
+		this.setState({ notes: copy });
+		console.log(foundIndex);
+	};
+
+	handleChange = (event) => {
+		this.setState({
+			text: event.target.value,
+		});
+	};
+
+	render() {
+		return (
+			<div className='App'>
+				<button onClick={this.onClickHandler}>Add Note</button>
+				<input type='text' onChange={this.handleChange} />
+				<div>
+					<ul>
+						{this.state.notes.map(({ text, id }) => {
+							return (
+								<li>
+									<h3>{text}</h3>
+									<button onClick={(evt) => this.handleClick(evt, id)}>
+										Delete
+									</button>
+								</li>
+							);
+						})}
+					</ul>
+				</div>
+			</div>
+		);
+	}
 }
-
-onClickHandler = () => {
-  this.setState({
-    isClicked: true
-  })
-  console.log(this.state.isClicked)
-
-  this.setState({
-    items: [...this.state.items, { id: this.state.items.length + 1, input: this.state.input }],
-    isClicked: false,
-    input: ""
-  })
-}
-
-handleClick = (event, id) => {
-  console.log(id)
-  const foundIndex = this.state.items.findIndex(items => items.id === id)
-  const copy = [...this.state.items]
-  copy.splice(foundIndex, 1)
-  this.setState({ items: copy })
-  console.log(foundIndex)
-}
-
-handleChange = event => {
-  this.setState({
-    input: event.target.value
-  })
-}
-
-render() {
-  return (
-    <div className="App">
-      <h1>Here are my notes!</h1>
-      <p>Add some short notes to help you review the information</p>
-      <form onSubmit={this.formSubmit}>
-          <input
-            type="text"
-            value={this.state.input}
-            onChange={this.inputUpdate}>
-          </input>
-
-          <button onClick={this.formSubmit}>
-            Add Note
-          </button>
-
-          {this.state.items.map(({ input, id }) => {
-              return (
-
-          <button onClick={event => this.handleClick(event, id)}>
-            Delete Note
-          </button>
-          )})
-            }
-        </form>
-
-        <ul>
-          {this.state.items.map((item, index) => {
-            return <li key={index}>{item}</li>;
-          })}
-        </ul>
-        {console.log(this.state.items)}
-      </div>
-    );
-  }
-}
-
 
 export default Notes;

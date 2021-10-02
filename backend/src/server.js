@@ -8,7 +8,8 @@ const bodyParser = require("body-parser");
 
 // Constants
 const PORT = process.env.PORT || 8080;
-// const HOST = '0.0.0.0'; **getting rid of for testing (9/27)
+// const HOST = "0.0.0.0";
+// **getting rid of for testing (9/27)?- Erik says not to use code on line 11 for now
 
 // App
 const app = express();
@@ -36,15 +37,16 @@ app.post("/register", function (req, res) {
 	const password = req.body.password;
 	const email = req.body.email;
 	console.log(username);
-	// conn.query(`INSERT INTO userinfo (username = ? , email = ? , password = ? `),
-	// 	[username, email, password],
-	// 	function (error, results) {
-	// 		console.log(username);
-	// 		if (error) {
-	// 			throw error;
-	// 		}
-	// 		res.send("user registered");
-	// 	};
+	// take user registraiton form values and put into MySQL database:
+	conn.query(`INSERT INTO userinfo (username = ? , email = ? , password = ? `),
+		[username, email, password],
+		function (error, results) {
+			console.log(username);
+			if (error) {
+				throw error;
+			}
+			res.send("user registered");
+		};
 });
 
 //LOGIN- used JWT tokens, but stored in the utils on frontend- need to get help to see which ones should

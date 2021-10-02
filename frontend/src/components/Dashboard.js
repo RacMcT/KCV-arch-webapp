@@ -1,5 +1,6 @@
 import React from "react";
 import { getUser, removeUserSession } from "../utils/Common";
+import Notes from "./Notes";
 
 function Dashboard(props) {
 	const user = getUser();
@@ -16,6 +17,7 @@ function Dashboard(props) {
 				Welcome to the Koshkonong Creek Village Site Digital Archaeology
 				Experience!
 			</h2>
+			<Notes />
 			<button onClick={handleLogout} value='Logout' name='logoutbtn' />
 		</div>
 	);
