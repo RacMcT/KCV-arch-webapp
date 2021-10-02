@@ -1,8 +1,8 @@
 import React from "react";
 
-//need to push todo/notes into mysql database (user_notes table) and then have it only visible when user is logged in
-// same as how "dashboard" was originally set up?!-- also check on how worked for JS-411 homework!
-// need to "componentify" this and pull out api calls once done for the mysql database
+//need to push todo/notes into mysql database (user_notes table)
+//need to also link DB tables by user_name so it can be pulled up on user login for thier personal notes
+//renders onto dashboard, so only visible when user is logged in - done
 
 class Notes extends React.Component {
 	constructor(props) {
