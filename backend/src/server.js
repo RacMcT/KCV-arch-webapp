@@ -38,7 +38,7 @@ app.post("/register", function (req, res) {
 	const email = req.body.email;
 	console.log(username);
 	// take user registraiton form values and put into MySQL database:
-	conn.query(`INSERT INTO userinfo (username = ? , email = ? , password = ? `),
+	conn.query(`INSERT INTO userinfo (UserName = ? , Email = ? , Password = ? `),
 		[username, email, password],
 		function (error, results) {
 			console.log(username);
@@ -62,7 +62,7 @@ app.post("/Login", function (request, response) {
 	let password = request.body.password;
 	if (username && password) {
 		connection.query(
-			"SELECT * FROM userinfo WHERE username = ? AND password = ?",
+			"SELECT * FROM userinfo WHERE UserName = ? AND Password = ?",
 			[username, password],
 			function (error, results, fields) {
 				if (results.length > 0) {
