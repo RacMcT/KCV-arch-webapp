@@ -6,30 +6,43 @@ import Container from "react-bootstrap/Container";
 need to also include close for the mobile responsive version?
 hamburger icon for mobile responsive setting?*/
 
-const navbar = (props) => {
+const Navigation = (props) => {
 	return (
 		<Container>
 			<Navbar collapseOnSelect expand='lg' bg='dark' variant='dark'>
-				<Container>
-					<Navbar.Brand href='./landing'>Home</Navbar.Brand>
-					<Navbar.Toggle aria-controls='responsive-navbar-nav' />
-					<Navbar.Collapse id='responsive-navbar-nav'>
-						<Nav className='nav-links'>
-							<Nav.Link href='../Pages/Excavhist'>Excavation History</Nav.Link>
-							<Nav.Link href='../Pages/About'>About Archaeology</Nav.Link>
-							<Nav.Link href='../Pages/Oneota'>Oneota Prehistory</Nav.Link>
-							<Nav.Link href='../Pages/Research'>Ongoing Research</Nav.Link>
-							<Nav.Link href='../Pages/PhotoGallery'>Photo Gallery</Nav.Link>
-							<Nav.Link href='../Pages/Technology'>Technology at Site</Nav.Link>
-						</Nav>
-						<Nav>
-							<Nav.Link href='/login'>Login</Nav.Link>
-						</Nav>
-					</Navbar.Collapse>
-				</Container>
+				<nav class='navbar navbar-expand-lg navbar-light bg-light'>
+					<div class='container-fluid'>
+						<button
+							class='navbar-toggler'
+							type='button'
+							data-bs-toggle='collapse'
+							data-bs-target='#navbarTogglerDemo03'
+							aria-controls='navbarTogglerDemo03'
+							aria-expanded='false'
+							aria-label='Toggle navigation'
+						>
+							<span class='navbar-toggler-icon'></span>
+						</button>
+
+						<div class='collapse navbar-collapse' id='navbarTogglerDemo03'>
+							<ul class='navbar-nav me-auto mb-2 mb-lg-0 style="list-style: none;'>
+								<li class='nav-item'>
+									<a class='nav-link active' aria-current='page' href='../Home'>
+										Home
+									</a>
+								</li>
+								<li class='nav-item'>
+									<a class='nav-link' href='../Pages/About'>
+										About Archaeology
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
 			</Navbar>
 		</Container>
 	);
 };
 
-export default navbar;
+export default Navigation;
