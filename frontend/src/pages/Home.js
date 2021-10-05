@@ -3,7 +3,8 @@ import Dashboard from "../components/Dashboard";
 import Login from "../components/Login";
 import RegistrationForm from "../components/Registration";
 import Footer from "../components/Footer";
-// import Carousel from "../components/PhotoCarousel";
+import PhotoCarousel from "../components/PhotoCarousel";
+import "bootstrap/dist/css/bootstrap.min.css";
 // import Navbar from "../components/Navbar";
 
 function Home() {
@@ -13,6 +14,7 @@ function Home() {
 				{/* <Navbar /> */}
 				<Login />
 				<Dashboard />
+				<PhotoCarousel />
 				<RegistrationForm />
 				<h1>
 					{" "}
