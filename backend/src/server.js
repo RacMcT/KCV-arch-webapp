@@ -38,7 +38,8 @@ app.post("/register", function (req, res) {
 	const email = req.body.email;
 	console.log(username);
 	// take user registraiton form values and put into MySQL database:
-	conn.query(`INSERT INTO userinfo (UserName = ? , Email = ? , Password = ? `),
+	conn.query(
+		"INSERT INTO userinfo (UserName, Email, Password) values(?, ?, ?)",
 		[username, email, password],
 		function (error, results) {
 			console.log(username);
@@ -46,7 +47,10 @@ app.post("/register", function (req, res) {
 				throw error;
 			}
 			res.send("user registered");
-		};
+			//payload- useful information to help notify the user identification to know who made the request--
+			//id of user as result of registration INSERT or result of LOGIN
+		}
+	);
 });
 
 //LOGIN- used JWT tokens, but stored in the utils on frontend- need to get help to see which ones should
@@ -106,4 +110,3 @@ app.listen(PORT, () => {
 //       res.json(results); //sending back a response from database (res=response; sending db information back as json notation)
 //     }
 //   )
-// });

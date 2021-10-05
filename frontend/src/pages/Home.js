@@ -3,6 +3,7 @@ import Dashboard from "../components/Dashboard";
 import Login from "../components/Login";
 import RegistrationForm from "../components/Registration";
 import Footer from "../components/Footer";
+// import Carousel from "../components/PhotoCarousel";
 // import Navbar from "../components/Navbar";
 
 function Home() {
@@ -17,6 +18,7 @@ function Home() {
 					{" "}
 					Welcome to Rachel's Capstone Home Page!- testing if it's all working?!
 				</h1>
+				{/* <Carousel /> */}
 				<Footer />
 			</div>
 		</body>
