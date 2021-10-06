@@ -4,14 +4,14 @@ import Login from "../components/Login";
 import RegistrationForm from "../components/Registration";
 import Footer from "../components/Footer";
 import PhotoCarousel from "../components/PhotoCarousel";
+import Notes from "../components/Notes";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import Navbar from "../components/Navbar";
 
 function Home() {
 	return (
 		<body class='d-flex flex-column min-vh-100'>
 			<div class='wrapper flex-grow-1'>
-				{/* <Navbar /> */}
+				<Notes />
 				<Login />
 				<Dashboard />
 				<PhotoCarousel />
@@ -20,7 +20,6 @@ function Home() {
 					{" "}
 					Welcome to Rachel's Capstone Home Page!- testing if it's all working?!
 				</h1>
-				{/* <Carousel /> */}
 				<Footer />
 			</div>
 		</body>
