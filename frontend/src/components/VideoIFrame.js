@@ -1,7 +1,8 @@
 import React from "react";
 import Iframe from "react-iframe";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-function video() {
+function Video() {
 	return (
 		<Iframe
 			url='https://www.youtube.com/watch?v=GJM93DPPOT0'
@@ -14,4 +15,4 @@ function video() {
 		/>
 	);
 }
-export default video;
+export default Video;

@@ -36,6 +36,26 @@ const Navigation = (props) => {
 										About Archaeology
 									</a>
 								</li>
+								<li class='nav-item'>
+									<a class='nav-link' href='../Pages/Oneota'>
+										Oneota Culture
+									</a>
+								</li>
+								<li class='nav-item'>
+									<a class='nav-link' href='../Pages/Research'>
+										Ongoing Research
+									</a>
+								</li>
+								<li class='nav-item'>
+									<a class='nav-link' href='../Pages/Excavhist'>
+										Excavation History
+									</a>
+								</li>
+								<li class='nav-item'>
+									<a class='nav-link' href='../Pages/PhotoGallery'>
+										Photo Gallery
+									</a>
+								</li>
 							</ul>
 						</div>
 					</div>

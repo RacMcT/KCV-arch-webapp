@@ -12,8 +12,8 @@ function About() {
 		<body class='d-flex flex-column min-vh-100'>
 			<div class='wrapper flex-grow-1'>
 				<Navbar />
-				<h1>KCV Excavation History</h1>
-				<h2>Field School Seasons </h2>
+				<h1>About Archaeology</h1>
+				<h2>The Basics </h2>
 				<PhotoCarousel />
 				<h3>Fun Facts </h3>
 				<p>
