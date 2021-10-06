@@ -1,5 +1,6 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 //https://react-bootstrap.github.io/components/carousel/#api
 const PhotoCarousel = () => (
@@ -7,8 +8,9 @@ const PhotoCarousel = () => (
 		<Carousel.Item>
 			<img
 				className='photo-carousel-item'
-				src='../images/practice/peru'
+				src='../images/practice/peru.jpg'
 				alt='First slide'
+				// width='260px;'
 			/>
 			<Carousel.Caption>
 				<h3>First slide label</h3>
@@ -18,8 +20,9 @@ const PhotoCarousel = () => (
 		<Carousel.Item>
 			<img
 				className='photo-carousel-item'
-				src='../images/practice/peru'
+				src='../images/practice/peru.jpg'
 				alt='Second slide'
+				// width='260px;'
 			/>
 
 			<Carousel.Caption>
@@ -30,8 +33,9 @@ const PhotoCarousel = () => (
 		<Carousel.Item>
 			<img
 				className='photo-carousel-item'
-				src='../images./practice/israel.jpg'
+				src='../images/practice/israel.jpg'
 				alt='Third slide'
+				// width='260px;'
 			/>
 
 			<Carousel.Caption>

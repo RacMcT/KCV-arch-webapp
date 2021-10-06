@@ -18,7 +18,9 @@ function Dashboard(props) {
 				Experience!
 			</h2>
 			<Notes />
-			<button onClick={handleLogout} value='Logout' name='logoutbtn' />
+			<button onClick={handleLogout} value='Logout' name='logoutbtn'>
+				Log Out
+			</button>
 		</div>
 	);
 }
