@@ -34,13 +34,8 @@ function Login(props) {
 		<form onSubmit={handleFormSubmit}>
 			<h3> Login</h3>
 
-			<h4>UserName</h4>
-			<input
-				type='text'
-				name='username'
-				required
-				onChange={handleInputChanges}
-			/>
+			<h4>Email</h4>
+			<input type='email' name='email' required onChange={handleInputChanges} />
 			<h4>Password</h4>
 			<input
 				type='password'
