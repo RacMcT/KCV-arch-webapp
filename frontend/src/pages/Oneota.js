@@ -5,7 +5,7 @@ import React from "react";
 import Footer from "../components/Footer";
 import PhotoCarousel from "../components/PhotoCarousel";
 import Navbar from "../components/Navbar";
-import LandscapesVideo from "../components/LandscapesVideo";
+import LandscapesVideo from "../components/Videos/LandscapesVideo";
 
 function Oneota() {
 	return (

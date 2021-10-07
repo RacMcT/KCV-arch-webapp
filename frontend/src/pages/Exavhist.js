@@ -6,7 +6,7 @@
 import React from "react";
 import Footer from "../components/Footer";
 import PhotoCarousel from "../components/PhotoCarousel";
-import KoshExcavVideo from "../components/KoshExcavVideo";
+import KoshExcavVideo from "../components/Videos/KoshExcavVideo";
 import Navbar from "../components/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 
