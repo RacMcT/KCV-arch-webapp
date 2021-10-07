@@ -5,7 +5,6 @@ import RegistrationForm from "../components/Registration";
 import Footer from "../components/Footer";
 import PhotoCarousel from "../components/PhotoCarousel";
 import Notes from "../components/Notes";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 function Home() {
 	return (
