@@ -3,7 +3,7 @@ import axios from "axios";
 
 function LoginAPI(credentials) {
 	return axios.post("http://localhost:8080/Login", {
-		username: credentials.username,
+		username: credentials.email,
 		password: credentials.password,
 	});
 }
