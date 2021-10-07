@@ -5,6 +5,7 @@ const express = require("express");
 const conn = require("./database");
 const session = require("express-session");
 const bodyParser = require("body-parser");
+const login = require("./routers/login-registration");
 
 // Constants
 const PORT = process.env.PORT || 8080;
@@ -24,6 +25,8 @@ app.use(
 );
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+app.use("/login-registration", login);
 
 app.get("/", (req, res) => {
 	//specifying the api
