@@ -1,6 +1,10 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
-import "bootstrap/dist/css/bootstrap.min.css";
+
+//Structure for Array of Images
+const practiceimages = ["assets/peru.jpg"];
+
+//create seperate arrays of images- label so I know which images are in which array!!
 
 //https://react-bootstrap.github.io/components/carousel/#api
 const PhotoCarousel = () => (
@@ -8,7 +12,7 @@ const PhotoCarousel = () => (
 		<Carousel.Item>
 			<img
 				className='photo-carousel-item'
-				src='../images/practice/peru.jpg'
+				src='assets/peru.jpg'
 				alt='First slide'
 				// width='260px;'
 			/>

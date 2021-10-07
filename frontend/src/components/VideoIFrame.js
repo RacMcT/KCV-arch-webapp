@@ -1,18 +1,19 @@
 import React from "react";
-import Iframe from "react-iframe";
 import "bootstrap/dist/css/bootstrap.min.css";
+
+//can customize size- height and width
 
 function Video() {
 	return (
-		<Iframe
-			url='https://www.youtube.com/watch?v=GJM93DPPOT0'
-			width='450px'
-			height='450px'
-			id='uwm-kcv-video'
-			className='video-iframe'
-			display='initial'
-			position='relative'
-		/>
+		<iframe
+			width='560'
+			height='315'
+			src='https://www.youtube.com/embed/GJM93DPPOT0'
+			title='YouTube video player'
+			frameborder='0'
+			allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+			allowfullscreen
+		></iframe>
 	);
 }
 export default Video;
