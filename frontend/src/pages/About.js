@@ -5,7 +5,7 @@ import React from "react";
 import Footer from "../components/Footer";
 import PhotoCarousel from "../components/PhotoCarousel";
 import Navbar from "../components/Navbar";
-import IntroArchVideo from "../components/IntroArchVideo";
+import IntroArchVideo from "../components/Videos/IntroArchVideo";
 
 function About() {
 	return (
