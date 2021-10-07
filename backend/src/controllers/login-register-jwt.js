@@ -1,7 +1,8 @@
 const mysql = require("mysql");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-const pool = require("../sql/connection");
+const mysql = require("mysql");
+require("dotenv").config();
 
 function logIn(req, res) {
 	const { email, password } = req.body;
