@@ -2,10 +2,11 @@
 require("dotenv").config();
 const cors = require("cors");
 const express = require("express");
-const conn = require("./database");
+const conn = require("./utils.old/database");
 const session = require("express-session");
 const bodyParser = require("body-parser");
 const login = require("./routers/login-registration");
+const notesRouter = require("./routers/notes");
 
 // Constants
 const PORT = process.env.PORT || 8080;
@@ -26,7 +27,8 @@ app.use(
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use("/login-registration", login);
+app.use("/login-registration", login); // cpnnection to new modules with JWT token? **ask Aaron re structure?
+app.use("/notes", notesRouter);
 
 app.get("/", (req, res) => {
 	//specifying the api
