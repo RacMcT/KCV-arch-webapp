@@ -6,7 +6,7 @@
 import React from "react";
 import Footer from "../components/Footer";
 import PhotoCarousel from "../components/PhotoCarousel";
-import Video from "../components/VideoIFrame";
+import KoshExcavVideo from "../components/KoshExcavVideo";
 import Navbar from "../components/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -28,7 +28,7 @@ function ExcavHist() {
 					pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
 					culpa qui officia deserunt mollit anim id est laborum.
 				</p>
-				<Video />
+				<KoshExcavVideo />
 
 				<Footer />
 			</div>

@@ -5,7 +5,7 @@ import React from "react";
 import Footer from "../components/Footer";
 import PhotoCarousel from "../components/PhotoCarousel";
 import Navbar from "../components/Navbar";
-import "bootstrap/dist/css/bootstrap.min.css";
+import IntroArchVideo from "../components/IntroArchVideo";
 
 function About() {
 	return (
@@ -13,6 +13,7 @@ function About() {
 			<div class='wrapper flex-grow-1'>
 				<Navbar />
 				<h1>About Archaeology</h1>
+				<IntroArchVideo />
 				<h2>The Basics </h2>
 				<PhotoCarousel />
 				<h3>Fun Facts </h3>

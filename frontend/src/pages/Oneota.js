@@ -5,7 +5,7 @@ import React from "react";
 import Footer from "../components/Footer";
 import PhotoCarousel from "../components/PhotoCarousel";
 import Navbar from "../components/Navbar";
-import "bootstrap/dist/css/bootstrap.min.css";
+import LandscapesVideo from "../components/LandscapesVideo";
 
 function Oneota() {
 	return (
@@ -14,6 +14,7 @@ function Oneota() {
 				<Navbar />
 				<h1>About Oneota</h1>
 				<h2>The Basics </h2>
+				<LandscapesVideo />
 				<PhotoCarousel />
 				<h3>Fun Facts </h3>
 				<p>
