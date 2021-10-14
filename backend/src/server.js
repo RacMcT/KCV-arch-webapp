@@ -11,7 +11,7 @@ const notesRouter = require("./routers/notes");
 // Constants
 const PORT = process.env.PORT || 8080;
 // const HOST = "0.0.0.0";
-// **getting rid of for testing (9/27)?- Erik says not to use code on line 11 for now
+// **getting rid of for testing (9/27)?- Erik says not to use code on line 13 for now
 
 // App
 const app = express();
@@ -27,13 +27,14 @@ app.use(
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use("/login-registration", login); // cpnnection to new modules with JWT token? **ask Aaron re structure?
-app.use("/notes", notesRouter);
-
 app.get("/", (req, res) => {
 	//specifying the api
 	res.send("Hello World"); // sending back a response (the '/' means if no url is specified by frontend say, "hello world")
 });
+
+//Login, Registration and Notes: Routers/Controller Connections
+app.use("/login-registration", login); // connection to new modules with JWT token? **ask Aaron re structure?
+app.use("/notes", notesRouter);
 
 //Registration Form Data to then get from the form, and then insert into the database
 
