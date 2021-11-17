@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
 });
 
 //Login, Registration and Notes: Routers/Controller Connections
-app.use("/login-registration", login); // connection to new modules with JWT token? **ask Aaron re structure?
+app.use("/auth", login); // connection to new modules with JWT token? **ask Aaron regarding structure?**
 app.use("/notes", notesRouter);
 
 //Registration Form Data to then get from the form, and then insert into the database
@@ -67,11 +67,11 @@ app.post("/register", function (req, res) {
 // need to code that the registration information is getting put into the MYSQL database
 // then need to code that the login checks the mysql database against the username/password input values
 
-app.post("/Login", function (request, response) {
+app.post("/login-unsecure", function (request, response) {
 	let username = request.body.username;
 	let password = request.body.password;
 	if (username && password) {
-		connection.query(
+		conn.query(
 			"SELECT * FROM userinfo WHERE UserName = ? AND Password = ?",
 			[username, password],
 			function (error, results, fields) {

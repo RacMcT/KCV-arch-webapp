@@ -1,27 +1,30 @@
+require("dotenv").config();
 const mysql = require("mysql");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-const mysql = require("mysql");
-require("dotenv").config();
+const conn = require("../utils.old/database");
 
 function logIn(req, res) {
 	const { email, password } = req.body;
-
+	console.log("recieved email & password");
 	//get the user my email
-	const sql = mysql.format("SELECT *  FROM userinfo WHERE email = ?", [email]);
-
-	pool.query(sql, (error, results) => {
+	const sql = mysql.format("SELECT * FROM userinfo WHERE Email = ?", [email]);
+	console.log("formatted query");
+	console.log(sql);
+	conn.query(sql, (error, results) => {
 		if (error) {
 			res.status(500).send("Error with SQL");
 			return;
 		}
-
+		console.log("no sql error");
 		const user = results[0];
-
-		if (!user || !comparePasswords(password, user.password)) {
+		console.log(user);
+		console.log(encryptPassword("foobar"));
+		if (!user || !comparePasswords(password, user.Password)) {
 			res.status(400).send("incorrect email or password");
 			return;
 		}
+		console.log("password matches");
 
 		const token = generateJwtToken(user.id);
 		res.json({ token });
@@ -42,7 +45,7 @@ async function registerUser(req, res) {
 		[email]
 	);
 
-	pool.query(queryToGetUser, (error, results) => {
+	conn.query(queryToGetUser, (error, results) => {
 		if (error) {
 			res.status(500).send("Error with SQL");
 			return;
@@ -64,7 +67,7 @@ async function registerUser(req, res) {
 			[name, email, encryptedPassword]
 		);
 
-		pool.query(insertNewUser, (error, results) => {
+		conn.query(insertNewUser, (error, results) => {
 			if (error) {
 				res.status(500).send("Error with SQL");
 				return;
@@ -106,8 +109,8 @@ function comparePasswords(plainTextPassword, encryptedPassword) {
 }
 
 function encryptPassword(plainTextPassword) {
-	const salt = bcrypt.genSaltSync(10);
-	const hash = bcrypt.hashSync(plainTextPassword, salt);
+	// const salt = bcrypt.genSaltSync(10);
+	const hash = bcrypt.hashSync(plainTextPassword, 10);
 	return hash;
 }
 

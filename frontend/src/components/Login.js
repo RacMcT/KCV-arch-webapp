@@ -20,7 +20,6 @@ function Login(props) {
 
 	function handleFormSubmit(event) {
 		event.preventDefault();
-		//e-zambrano github
 
 		loginApi(credentials)
 			.then((response) => {
