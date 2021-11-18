@@ -5,7 +5,7 @@ function Login(props) {
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(null);
 	const [credentials, setCredentials] = useState({
-		username: "",
+		email: "",
 		password: "",
 	});
 
@@ -52,6 +52,8 @@ function Login(props) {
 	);
 }
 
+export default Login;
+
 //   getUserInfo() {
 //   // LoginAPI
 // // handle button click of login form
@@ -71,5 +73,3 @@ function Login(props) {
 //   }
 // }
 // }
-
-export default Login;

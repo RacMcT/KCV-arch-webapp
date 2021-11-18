@@ -2,7 +2,7 @@
 require("dotenv").config();
 const cors = require("cors");
 const express = require("express");
-const conn = require("./utils.old/database");
+const conn = require("./database");
 const session = require("express-session");
 const bodyParser = require("body-parser");
 const login = require("./routers/login-registration");
@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
 });
 
 //Login, Registration and Notes: Routers/Controller Connections
-app.use("/auth", login); // connection to new modules with JWT token? **ask Aaron regarding structure?**
+app.use("/auth", login); // connection to new modules with JWT token
 app.use("/notes", notesRouter);
 
 //Registration Form Data to then get from the form, and then insert into the database

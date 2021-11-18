@@ -13,13 +13,12 @@ function Home() {
 				<Notes />
 				<Login />
 				<Dashboard />
-				<PhotoCarousel />
+				{/* <PhotoCarousel /> */}
 				<RegistrationForm />
 				<h1>
 					{" "}
 					Welcome to Rachel's Capstone Home Page!- testing if it's all working?!
 				</h1>
-				<Footer />
 			</div>
 		</body>
 	);
