@@ -2,12 +2,12 @@ require("dotenv").config();
 const mysql = require("mysql");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-const conn = require("../utils.old/database");
+const conn = require("../database");
 
 function logIn(req, res) {
 	const { email, password } = req.body;
 	console.log("recieved email & password");
-	//get the user my email
+	//get the user by email
 	const sql = mysql.format("SELECT * FROM userinfo WHERE Email = ?", [email]);
 	console.log("formatted query");
 	console.log(sql);
