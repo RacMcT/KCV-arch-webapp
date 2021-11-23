@@ -2,7 +2,7 @@ require("dotenv").config();
 const mysql = require("mysql");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-const conn = require("../database");
+const conn = require("../utils.old/database");
 
 function logIn(req, res) {
 	const { email, password } = req.body;

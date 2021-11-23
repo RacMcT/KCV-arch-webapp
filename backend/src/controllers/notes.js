@@ -16,7 +16,7 @@ const getAllNotes = (req, res) => {
 };
 
 const getNotesById = (req, res) => {
-	let sql = "SELECT * FROM notes WHERE notes_id = ? ";
+	let sql = "SELECT * FROM Notes WHERE Notes_ID = ? ";
 	sql = mysql.format(sql, [req.params.id]);
 	conn.query(sql, (err, rows) => {
 		if (err) return handleSQLError(res, err);
