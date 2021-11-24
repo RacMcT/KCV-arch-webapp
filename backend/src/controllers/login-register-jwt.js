@@ -119,4 +119,6 @@ function generateJwtToken(id) {
 	return token;
 }
 
+//import jwt generater into util and then import here and in userUpdateProfile-- only fixing in one place!
+
 module.exports = { logIn, registerUser, authenticateJwtToken };
