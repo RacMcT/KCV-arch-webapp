@@ -1,4 +1,5 @@
 import asyncHandler from "express-async-handler";
+import { generateJwtToken } from "../utils/jwt";
 
 require("dotenv").config();
 const mysql = require("mysql");
@@ -26,19 +27,23 @@ async function findById(userId) {
 const updateUserProfile = asyncHandler(async (req, res) => {
 	findById(req.user._id)
 		.then((user) => {
-			user.name = req.body.username || user.username;
-			user.email = req.body.email || user.email;
-			if (req.body.password) {
-				user.password = req.body.password;
-			}
+			//right here: run update to mysql database!!
 
-			const updatedUser = await user.save();
+			// user.name = req.body.username || user.username;
+			// user.email = req.body.email || user.email;
+			// if (req.body.password) {
+			// 	user.password = req.body.password;
+			// }
+
+			// const updatedUser = await user.save();
 
 			res.json({
 				_id: updatedUser._id,
 				name: updatedUser.username,
 				email: updatedUser.email,
-				token: generateToken(updatedUser._id),
+				token: generateJwtToken(updatedUser._id), // need to send everything except password, but do send an update JWT token
+				// need to look in login call for how generating JWT token to send back
+				// put into utils folder and then imported here and in login - 11/24/2021
 			});
 		})
 		.catch((error) => {

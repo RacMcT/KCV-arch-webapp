@@ -3,6 +3,7 @@ const mysql = require("mysql");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const conn = require("../utils.old/database");
+import { generateJwtToken } from "./utils.js/jwt";
 
 function logIn(req, res) {
 	const { email, password } = req.body;
@@ -112,11 +113,6 @@ function encryptPassword(plainTextPassword) {
 	// const salt = bcrypt.genSaltSync(10);
 	const hash = bcrypt.hashSync(plainTextPassword, 10);
 	return hash;
-}
-
-function generateJwtToken(id) {
-	const token = jwt.sign({ id }, process.env.JWT_SECRET);
-	return token;
 }
 
 //import jwt generater into util and then import here and in userUpdateProfile-- only fixing in one place!
