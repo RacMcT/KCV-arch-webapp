@@ -1,5 +1,5 @@
 const mysql = require("mysql");
-const conn = require("../utils.old/database");
+const conn = require("../database/database");
 require("dotenv").config();
 
 const handleSQLError = (res, err) => {

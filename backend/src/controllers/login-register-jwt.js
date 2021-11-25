@@ -2,8 +2,8 @@ require("dotenv").config();
 const mysql = require("mysql");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-const conn = require("../utils.old/database");
-import { generateJwtToken } from "./utils.js/jwt";
+const conn = require("../database/database");
+import { generateJwtToken } from "../utils/jwt";
 
 function logIn(req, res) {
 	const { email, password } = req.body;

@@ -15,7 +15,7 @@ const Footer = () => {
 			<Container>
 				<Row>
 					<Col className='text-center py-3'>
-						Oneota Digital Archaeology Program (c) 2021
+						Southeastern Wisconsin Oneota Digital Archaeology Program (c) 2021
 					</Col>
 				</Row>
 			</Container>
