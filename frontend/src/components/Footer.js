@@ -1,17 +1,26 @@
 import React from "react";
+import { Col, Container, Row } from "react-bootstrap";
 
-function Footer() {
+const Footer = () => {
 	return (
-		<div className='footer'>
-			<footer class='py-5 bg-dark fixed-bottom'>
-				<div class='container'>
-					<p class='m-0 text-center text-white'>
-						KCV WebApp Copyright &copy; 2021
-					</p>
-				</div>
-			</footer>
-		</div>
+		<footer
+			style={{
+				width: "100%",
+				position: "relative",
+				bottom: 0,
+				display: "flex",
+				justifyContent: "center",
+			}}
+		>
+			<Container>
+				<Row>
+					<Col className='text-center py-3'>
+						Southeastern Wisconsin Oneota Digital Archaeology Program (c) 2021
+					</Col>
+				</Row>
+			</Container>
+		</footer>
 	);
-}
+};
 
 export default Footer;

@@ -1,72 +1,27 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { NavLink } from "react-router-dom";
-import axios from "axios";
+import React from "react";
+import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import LandingPage from "./screens/landingPage/landingPage";
+import LoginScreen from "./screens/LoginScreen/LoginScreen";
+import RegisterScreen from "./screens/registerPage/registrationPage";
+import ProfileScreen from "./screens/profile/profile";
+import Dashboard from "./components/dashboard";
 
-import Login from "./components/Login";
-import Dashboard from "./components/Dashboard";
-import Home from "./pages/Home";
-import RegisterUser from "./components/Registration";
-
-import PrivateRoute from "./utils/PrivateRoute";
-import PublicRoute from "./utils/PublicRoute";
-import { getToken, removeUserSession, setUserSession } from "./utils/Common";
-
-function App() {
-	const [authLoading, setAuthLoading] = useState(true);
-
-	useEffect(() => {
-		const token = getToken();
-		if (!token) {
-			return;
-		}
-
-		axios
-			.get(`http://localhost:3000/verifyToken?token=${token}`)
-			.then((response) => {
-				setUserSession(response.data.token, response.data.user);
-				setAuthLoading(false);
-			})
-			.catch((error) => {
-				removeUserSession();
-				setAuthLoading(false);
-			});
-	}, []);
-
-	if (authLoading && getToken()) {
-		return <div className='content'>Checking Authentication...</div>;
-	}
-
+export default function App() {
 	return (
-		<div className='App'>
-			<Router>
-				<div>
-					<div className='header'>
-						<NavLink exact activeClassName='active' to='/'>
-							Home
-						</NavLink>
-						<NavLink activeClassName='active' to='/login'>
-							Login
-						</NavLink>
-						<small>(Access without token only)</small>
-						<NavLink activeClassName='active' to='/dashboard'>
-							Dashboard
-						</NavLink>
-						<small>(Access with token only)</small>
-					</div>
-					<div className='content'>
-						<Routes>
-							<Route path='/' element={Home} />
-							<PublicRoute path='/login' element={Login} />
-							<PublicRoute path='registration' element={RegisterUser} />
-							<PrivateRoute path='/dashboard' element={Dashboard} />
-						</Routes>
-					</div>
-				</div>
-			</Router>
-		</div>
+		<Router>
+			<Header />
+			<main className='App'>
+				<Route path='/' component={LandingPage} exact />
+				<Route path='/login' component={LoginScreen} />
+				<Route path='/register' component={RegisterScreen} />
+				<Route path='/profile' component={ProfileScreen} />
+				<Route path='/dashboard' component={Dashboard} />
+			</main>
+			<Footer />
+		</Router>
 	);
 }
-
-export default App;
