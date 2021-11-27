@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import Loading from "../../components/Loading";
-import ErrorMessage from "../../components/ErrorMessage";
+import Loading from "../../components/loading";
+import ErrorMessage from "../../components/errorMessage";
 import { register } from "../../actions/userActions";
 import MainScreen from "../../components/MainScreen";
-import userInfo from "./store";
 import "./RegisterScreen.css";
 
 function RegisterScreen() {
@@ -16,21 +15,14 @@ function RegisterScreen() {
 	const [confirmpassword, setConfirmPassword] = useState("");
 
 	const dispatch = useDispatch();
-
 	const userRegister = useSelector((state) => state.userRegister);
 	const { loading, error } = userRegister;
-
-	useEffect(() => {
-		if (userInfo) {
-			history.push("/");
-		}
-	}, [history, userInfo]);
 
 	const submitHandler = (e) => {
 		e.preventDefault();
 
 		if (password !== confirmpassword) {
-			setMessage("Passwords do not match");
+			ErrorMessage("Passwords do not match");
 		} else dispatch(register(username, email, password));
 	};
 

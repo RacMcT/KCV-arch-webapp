@@ -4,7 +4,7 @@ import MainScreen from "../../components/MainScreen";
 import "./ProfileScreen.css";
 import { useDispatch, useSelector } from "react-redux";
 import { updateProfile } from "../../actions/userActions";
-import Loading from "../../components/Loading";
+import Loading from "../../components/loading";
 import ErrorMessage from "../../components/ErrorMessage";
 
 const ProfileScreen = ({ location, history }) => {
@@ -37,7 +37,7 @@ const ProfileScreen = ({ location, history }) => {
 	};
 
 	return (
-		<MainScreen title='EDIT PROFILE'>
+		<MainScreen title='EDIT USER PROFILE'>
 			<div>
 				<Row className='profileContainer'>
 					<Col md={6}>
@@ -54,7 +54,7 @@ const ProfileScreen = ({ location, history }) => {
 								<Form.Control
 									type='text'
 									placeholder='Enter Name'
-									value={name}
+									value={username}
 									onChange={(e) => setName(e.target.value)}
 								></Form.Control>
 							</Form.Group>
@@ -85,9 +85,6 @@ const ProfileScreen = ({ location, history }) => {
 									onChange={(e) => setConfirmPassword(e.target.value)}
 								></Form.Control>
 							</Form.Group>{" "}
-							{picMessage && (
-								<ErrorMessage variant='danger'>{picMessage}</ErrorMessage>
-							)}
 							<Button type='submit' varient='primary'>
 								Update
 							</Button>
