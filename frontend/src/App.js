@@ -1,27 +1,30 @@
 import React from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import { render } from "react-dom";
+import Footer from "./components/footer";
+import Header from "./components/header";
 import LandingPage from "./screens/landingPage/landingPage";
 import LoginScreen from "./screens/LoginScreen/LoginScreen";
 import RegisterScreen from "./screens/registerPage/registrationPage";
 import ProfileScreen from "./screens/profile/profile";
-import Dashboard from "./components/dashboard";
+import Dashboard from "./screens/dashboardPage/dashboard";
 
 export default function App() {
 	return (
-		<Router>
+		<main className='App'>
 			<Header />
-			<main className='App'>
-				<Route path='/' component={LandingPage} exact />
-				<Route path='/login' component={LoginScreen} />
-				<Route path='/register' component={RegisterScreen} />
-				<Route path='/profile' component={ProfileScreen} />
-				<Route path='/dashboard' component={Dashboard} />
-			</main>
+			<BrowserRouter>
+				<Routes>
+					<Route path='/' component={LandingPage} exact />
+					<Route path='/login' component={LoginScreen} />
+					<Route path='/register' component={RegisterScreen} />
+					<Route path='/profile' component={ProfileScreen} />
+					<Route path='/dashboard' component={Dashboard} />
+				</Routes>
+			</BrowserRouter>
 			<Footer />
-		</Router>
+		</main>
 	);
 }

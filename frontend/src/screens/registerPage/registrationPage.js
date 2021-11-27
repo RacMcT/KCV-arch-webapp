@@ -6,7 +6,7 @@ import Loading from "../../components/loading";
 import ErrorMessage from "../../components/errorMessage";
 import { register } from "../../actions/userActions";
 import MainScreen from "../../components/MainScreen";
-import "./RegisterScreen.css";
+import "./registration.css";
 
 function RegisterScreen() {
 	const [email, setEmail] = useState("");

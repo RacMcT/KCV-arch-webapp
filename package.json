@@ -1,19 +1,19 @@
 {
-  "name": "kcv-arch-webapp",
-  "version": "1.0.0",
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "index.js",
-  "scripts": {
-    "start:frontend": "yarn --cwd frontend start"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RacMcT/KCV-arch-webapp.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/RacMcT/KCV-arch-webapp/issues"
-  },
-  "homepage": "https://github.com/RacMcT/KCV-arch-webapp#readme"
+	"name": "kcv-arch-webapp",
+	"version": "1.0.0",
+	"description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+	"main": "index.js",
+	"scripts": {
+		"start:frontend": "yarn --cwd frontend start"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/RacMcT/KCV-arch-webapp.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/RacMcT/KCV-arch-webapp/issues"
+	},
+	"homepage": "https://github.com/RacMcT/KCV-arch-webapp#readme"
 }

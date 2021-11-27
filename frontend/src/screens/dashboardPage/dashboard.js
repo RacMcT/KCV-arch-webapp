@@ -1,7 +1,5 @@
 import React from "react";
 import MainScreen from "../../pages/main";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
 import Card from "react-bootstrap/Card";
 
 function Dashboard() {
