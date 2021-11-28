@@ -8,7 +8,7 @@ import Footer from "./components/footer";
 import Header from "./components/header";
 import LandingPage from "./screens/landingPage/landingPage";
 import LoginScreen from "./screens/LoginScreen/LoginScreen";
-import RegisterScreen from "./screens/registerPage/registrationPage";
+import RegisterScreen from "./screens/registerationPage/registrationPage";
 import ProfileScreen from "./screens/profile/profile";
 import Dashboard from "./screens/dashboardPage/dashboard";
 

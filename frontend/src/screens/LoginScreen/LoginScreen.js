@@ -8,14 +8,20 @@ import { login } from "../../actions/userActions";
 import MainScreen from "../../components/MainScreen";
 import "./LoginScreen.css";
 
-function LoginScreen() {
+function LoginScreen({ history }) {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 
 	const dispatch = useDispatch();
 
 	const userLogin = useSelector((state) => state.userLogin);
-	const { loading, error } = userLogin;
+	const { loading, error, userInfo } = userLogin;
+
+	useEffect(() => {
+		if (userInfo) {
+			history.push("/dashboard");
+		}
+	}, [history, userInfo]);
 
 	const submitHandler = (e) => {
 		e.preventDefault();

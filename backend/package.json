@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"license": "MIT",
+	"type": "module",
 	"dependencies": {
 		"bcrypt": "^5.0.1",
 		"body-parser": "^1.19.0",
@@ -12,12 +13,16 @@
 		"express-async-handler": "^1.2.0",
 		"express-session": "^1.17.2",
 		"jsonwebtoken": "^8.5.1",
+		"module": "^1.2.5",
+		"mongoose": "^6.0.13",
 		"mysql": "^2.18.1",
+		"nodemon": "^2.0.15",
 		"type": "module"
 	},
 	"scripts": {
 		"build": "docker build . -t kcv-backend",
 		"start": "docker run -p 5000:8080 -d kcv-backend",
-		"local": "node src/server.js"
+		"local": "nodemon src/server.js",
+		"type": "module"
 	}
 }

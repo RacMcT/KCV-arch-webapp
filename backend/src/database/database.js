@@ -1,15 +1,17 @@
-// need to connect to my .env data?!-- found code structure below from tutorial docs online
+//Connection file to mongo db
+import mongoose from "mongoose";
 
-var mysql = require("mysql");
-var conn = mysql.createConnection({
-	host: process.env.DB_SERVER, // Replace with your host name
-	user: process.env.DB_USERNAME, // Replace with your database username
-	password: process.env.DB_PASSWORD, // Replace with your database password
-	database: process.env.DB_NAME, // // Replace with your database Name
-});
-
-conn.connect(function (err) {
-	if (err) throw err;
-	console.log("Database is connected successfully !");
-});
-module.exports = conn;
+const connectDB = async () => {
+	try {
+		const conn = await mongoose.connect(process.env.MONGO_URI, {
+			useUnifiedTopology: true,
+			useNewUrlParser: true,
+			// useCreateIndex: true,
+		});
+		console.log(`MongoDB Connected: ${conn.connection.host}`);
+	} catch (error) {
+		console.error(`Error: ${error.message}`);
+		process.exit();
+	}
+};
+export default connectDB;

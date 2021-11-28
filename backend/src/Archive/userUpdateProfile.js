@@ -5,7 +5,7 @@ require("dotenv").config();
 const mysql = require("mysql");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-const conn = require("../database/database");
+const conn = require("./database/database");
 
 async function findById(userId) {
 	const sql = mysql.format("SELECT * FROM userinfo WHERE ID = ?", [userId]);

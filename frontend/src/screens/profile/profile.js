@@ -8,7 +8,7 @@ import Loading from "../../components/loading";
 import ErrorMessage from "../../components/errorMessage";
 
 const ProfileScreen = ({ location, history }) => {
-	const [username, setName] = useState("");
+	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
@@ -25,7 +25,7 @@ const ProfileScreen = ({ location, history }) => {
 		if (!userInfo) {
 			history.push("/");
 		} else {
-			setName(userInfo.username);
+			setName(userInfo.name);
 			setEmail(userInfo.email);
 		}
 	}, [history, userInfo]);
@@ -33,9 +33,8 @@ const ProfileScreen = ({ location, history }) => {
 	const submitHandler = (e) => {
 		e.preventDefault();
 
-		dispatch(updateProfile({ username, email, password }));
+		dispatch(updateProfile({ name, email, password }));
 	};
-
 	return (
 		<MainScreen title='EDIT USER PROFILE'>
 			<div>
