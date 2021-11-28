@@ -1,7 +1,8 @@
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 // import { render } from "react-dom";
 import Footer from "./components/footer";
 import Header from "./components/header";
@@ -17,11 +18,11 @@ export default function App() {
 			<Header />
 			<BrowserRouter>
 				<Routes>
-					<Route path='/' component={LandingPage} exact />
-					<Route path='/login' component={LoginScreen} />
-					<Route path='/register' component={RegisterScreen} />
-					<Route path='/profile' component={ProfileScreen} />
-					<Route path='/dashboard' component={Dashboard} />
+					<Route path='/' element={<LandingPage />} />
+					<Route path='/login' element={<LoginScreen />} />
+					<Route path='/register' element={<RegisterScreen />} />
+					<Route path='/profile' element={<ProfileScreen />} />
+					<Route path='/dashboard' element={<Dashboard />} />
 				</Routes>
 			</BrowserRouter>
 			<Footer />

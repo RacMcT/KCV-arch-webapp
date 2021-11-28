@@ -1,22 +1,23 @@
 {
-  "name": "backend",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "dependencies": {
-    "bcrypt": "^5.0.1",
-    "body-parser": "^1.19.0",
-    "cors": "^2.8.5",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "express-async-handler": "^1.2.0",
-    "express-session": "^1.17.2",
-    "jsonwebtoken": "^8.5.1",
-    "mysql": "^2.18.1"
-  },
-  "scripts": {
-    "build": "docker build . -t kcv-backend",
-    "start": "docker run -p 5000:8080 -d kcv-backend",
-    "local": "node src/server.js"
-  }
+	"name": "backend",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"dependencies": {
+		"bcrypt": "^5.0.1",
+		"body-parser": "^1.19.0",
+		"cors": "^2.8.5",
+		"dotenv": "^10.0.0",
+		"express": "^4.17.1",
+		"express-async-handler": "^1.2.0",
+		"express-session": "^1.17.2",
+		"jsonwebtoken": "^8.5.1",
+		"mysql": "^2.18.1",
+		"type": "module"
+	},
+	"scripts": {
+		"build": "docker build . -t kcv-backend",
+		"start": "docker run -p 5000:8080 -d kcv-backend",
+		"local": "node src/server.js"
+	}
 }

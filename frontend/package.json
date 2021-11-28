@@ -17,6 +17,7 @@
 		"axios": "^0.24.0",
 		"bitmex-realtime-api": "^0.4.3",
 		"bootstrap": "5.1.1",
+		"cors": "^2.8.5",
 		"express": "^4.17.1",
 		"express-session": "^1.17.2",
 		"form-data": "^3.0.0",
@@ -70,5 +71,6 @@
 		"redux-devtools-extension": "^2.13.8"
 	},
 	"description": "y",
-	"private": true
+	"private": true,
+	"proxy": "http://localhost:8080"
 }

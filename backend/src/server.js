@@ -2,16 +2,13 @@
 require("dotenv").config();
 const cors = require("cors");
 const express = require("express");
-const conn = require("./database");
+const conn = require("./database/database");
 const session = require("express-session");
 const bodyParser = require("body-parser");
-const login = require("./routers/login-registration");
-const notesRouter = require("./routers/notes");
+const login = require("./Archive/routers/login-registration");
 
 // Constants
 const PORT = process.env.PORT || 8080;
-// const HOST = "0.0.0.0";
-// **getting rid of for testing (9/27)?- Erik says not to use code on line 13 for now
 
 // App
 const app = express();
@@ -32,9 +29,8 @@ app.get("/", (req, res) => {
 	res.send("Hello World"); // sending back a response (the '/' means if no url is specified by frontend say, "hello world")
 });
 
-//Login, Registration and Notes: Routers/Controller Connections
+//Login, Registration and UserProfile: Routers/Controller Connections
 app.use("/auth", login); // connection to new modules with JWT token
-app.use("/notes", notesRouter);
 
 //Registration Form Data to then get from the form, and then insert into the database
 
