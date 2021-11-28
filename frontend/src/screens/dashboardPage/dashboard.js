@@ -1,11 +1,12 @@
 import React from "react";
 import MainScreen from "../../components/MainScreen";
 import Card from "react-bootstrap/Card";
+import { useSelector } from "react-redux";
 
-const userLogin = useSelector((state) => state.userLogin);
-const { userInfo } = userLogin;
+const Dashboard = ({ location, history }) => {
+	const userLogin = useSelector((state) => state.userLogin);
+	const { userInfo } = userLogin;
 
-function Dashboard() {
 	return (
 		<MainScreen title={`Welcome Back ${userInfo && userInfo.name}..`}>
 			<body class='d-flex flex-column min-vh-100'>
@@ -106,7 +107,7 @@ function Dashboard() {
 			</body>
 		</MainScreen>
 	);
-}
+};
 
 export default Dashboard;
 

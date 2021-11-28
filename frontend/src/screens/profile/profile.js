@@ -35,8 +35,9 @@ const ProfileScreen = ({ location, history }) => {
 
 		dispatch(updateProfile({ name, email, password }));
 	};
+
 	return (
-		<MainScreen title='EDIT USER PROFILE'>
+		<MainScreen title='EDIT PROFILE'>
 			<div>
 				<Row className='profileContainer'>
 					<Col md={6}>
@@ -52,8 +53,8 @@ const ProfileScreen = ({ location, history }) => {
 								<Form.Label>Name</Form.Label>
 								<Form.Control
 									type='text'
-									placeholder='Enter Name'
-									value={username}
+									placeholder='Enter User Name'
+									value={name}
 									onChange={(e) => setName(e.target.value)}
 								></Form.Control>
 							</Form.Group>
@@ -85,17 +86,10 @@ const ProfileScreen = ({ location, history }) => {
 								></Form.Control>
 							</Form.Group>{" "}
 							<Button type='submit' varient='primary'>
-								Update
+								Update Profile
 							</Button>
 						</Form>
 					</Col>
-					<Col
-						style={{
-							display: "flex",
-							alignItems: "center",
-							justifyContent: "center",
-						}}
-					></Col>
 				</Row>
 			</div>
 		</MainScreen>

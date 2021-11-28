@@ -10,7 +10,7 @@ import "./registration.css";
 
 function RegisterScreen() {
 	const [email, setEmail] = useState("");
-	const [username, setName] = useState("");
+	const [name, setName] = useState("");
 	const [password, setPassword] = useState("");
 	const [confirmpassword, setConfirmPassword] = useState("");
 
@@ -23,7 +23,7 @@ function RegisterScreen() {
 
 		if (password !== confirmpassword) {
 			ErrorMessage("Passwords do not match");
-		} else dispatch(register(username, email, password));
+		} else dispatch(register(name, email, password));
 	};
 
 	return (
@@ -36,7 +36,7 @@ function RegisterScreen() {
 						<Form.Label>Name</Form.Label>
 						<Form.Control
 							type='username'
-							value={username}
+							value={name}
 							placeholder='Enter name'
 							onChange={(e) => setName(e.target.value)}
 						/>
