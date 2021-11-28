@@ -3,7 +3,7 @@ import MainScreen from "../../components/MainScreen";
 import Card from "react-bootstrap/Card";
 import { useSelector } from "react-redux";
 
-const Dashboard = ({ location, history }) => {
+const Dashboard = () => {
 	const userLogin = useSelector((state) => state.userLogin);
 	const { userInfo } = userLogin;
 
