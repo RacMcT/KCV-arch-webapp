@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateProfile } from "../../actions/userActions";
 import Loading from "../../components/loading";
 import ErrorMessage from "../../components/errorMessage";
+import { useNavigate } from "react-router-dom";
 
 const ProfileScreen = ({ location, history }) => {
 	const [name, setName] = useState("");
@@ -21,14 +22,16 @@ const ProfileScreen = ({ location, history }) => {
 	const userUpdate = useSelector((state) => state.userUpdate);
 	const { loading, error, success } = userUpdate;
 
+	const navigate = useNavigate();
+
 	useEffect(() => {
 		if (!userInfo) {
-			history.push("/");
+			navigate("/");
 		} else {
 			setName(userInfo.name);
 			setEmail(userInfo.email);
 		}
-	}, [history, userInfo]);
+	}, [navigate, userInfo]);
 
 	const submitHandler = (e) => {
 		e.preventDefault();

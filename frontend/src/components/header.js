@@ -44,7 +44,7 @@ function Header({ setSearch }) {
 						{userInfo ? (
 							<>
 								<NavDropdown
-									title={`${userInfo.username}`}
+									title={`${userInfo.name}`}
 									id='collasible-nav-dropdown'
 								>
 									<NavDropdown.Item href='/profile'>
