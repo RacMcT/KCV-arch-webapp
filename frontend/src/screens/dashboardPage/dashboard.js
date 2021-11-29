@@ -8,6 +8,7 @@ const Dashboard = () => {
 	const { userInfo } = userLogin;
 
 	//need to create routes to static pages and build them out with text and images before presentation!
+	//meeting with UW-Milwaukee professors to discuss content one last time before content page build
 
 	return (
 		<MainScreen title={`Welcome Back ${userInfo && userInfo.name}..`}>
