@@ -86,7 +86,7 @@ const Dashboard = () => {
 							</Card.Body>
 						</Card>
 						<Card>
-							<Card.Img variant='top' src='holder.js/100px160' />
+							<Card.Img variant='top' src='assets/images/deer-verts.png' />
 							<Card.Body>
 								<Card.Title>Ongoing Research</Card.Title>
 								<Card.Text>
@@ -100,7 +100,7 @@ const Dashboard = () => {
 							</Card.Body>
 						</Card>
 						<Card>
-							<Card.Img variant='top' src='holder.js/100px160' />
+							<Card.Img variant='top' src='assets/images/deer-verts.png' />
 							<Card.Body>
 								<Card.Title>Concepts Review Quiz</Card.Title>
 								<Card.Text>
