@@ -4,7 +4,7 @@
 	"description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
 	"main": "index.js",
 	"scripts": {
-		"start:frontend": "yarn --cwd frontend start"
+		"start": "node server.js"
 	},
 	"repository": {
 		"type": "git",
@@ -15,5 +15,6 @@
 	"bugs": {
 		"url": "https://github.com/RacMcT/KCV-arch-webapp/issues"
 	},
-	"homepage": "https://github.com/RacMcT/KCV-arch-webapp#readme"
+	"homepage": "https://github.com/RacMcT/KCV-arch-webapp#readme",
+	"dependencies": {}
 }
