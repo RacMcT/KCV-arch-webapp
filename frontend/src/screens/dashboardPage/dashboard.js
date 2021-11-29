@@ -7,6 +7,8 @@ const Dashboard = () => {
 	const userLogin = useSelector((state) => state.userLogin);
 	const { userInfo } = userLogin;
 
+	//need to create routes to static pages and build them out with text and images before presentation!
+
 	return (
 		<MainScreen title={`Welcome Back ${userInfo && userInfo.name}..`}>
 			<body class='d-flex flex-column min-vh-100'>
@@ -56,7 +58,7 @@ const Dashboard = () => {
 						<Card>
 							<Card.Img
 								variant='top'
-								src='assets/images/lithic1.png'
+								src='assets/images/PXL_20201019_155233126.jpg'
 								class='card-img'
 							/>
 							<Card.Body>
