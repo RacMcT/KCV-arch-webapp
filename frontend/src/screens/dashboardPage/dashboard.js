@@ -16,6 +16,7 @@ const Dashboard = () => {
 							<Card.Img
 								variant='top'
 								src='assets/images/insitu-ceramic-cluster.png'
+								class='card-img'
 							/>
 							<Card.Body>
 								<Card.Title>About Archaeology</Card.Title>
@@ -35,6 +36,7 @@ const Dashboard = () => {
 							<Card.Img
 								variant='top'
 								src='assests/images/KCV-2021-excavation-block.png'
+								class='card-img'
 							/>
 							<Card.Body>
 								<Card.Title>Excavation History</Card.Title>
@@ -52,7 +54,11 @@ const Dashboard = () => {
 							</Card.Body>
 						</Card>
 						<Card>
-							<Card.Img variant='top' src='assets/images/lithic1.png' />
+							<Card.Img
+								variant='top'
+								src='assets/images/lithic1.png'
+								class='card-img'
+							/>
 							<Card.Body>
 								<Card.Title>Technology</Card.Title>
 								<Card.Text>
@@ -73,6 +79,7 @@ const Dashboard = () => {
 							<Card.Img
 								variant='top'
 								src='assets/images/excavating-bones.png'
+								class='card-img'
 							/>
 							<Card.Body>
 								<Card.Title>Artifact Gallery</Card.Title>
@@ -86,7 +93,11 @@ const Dashboard = () => {
 							</Card.Body>
 						</Card>
 						<Card>
-							<Card.Img variant='top' src='assets/images/deer-verts.png' />
+							<Card.Img
+								variant='top'
+								src='assets/images/deer-verts.png'
+								class='card-img'
+							/>
 							<Card.Body>
 								<Card.Title>Ongoing Research</Card.Title>
 								<Card.Text>
@@ -100,7 +111,11 @@ const Dashboard = () => {
 							</Card.Body>
 						</Card>
 						<Card>
-							<Card.Img variant='top' src='assets/images/deer-verts.png' />
+							<Card.Img
+								variant='top'
+								src='assets/images/books.png'
+								class='card-img'
+							/>
 							<Card.Body>
 								<Card.Title>Concepts Review Quiz</Card.Title>
 								<Card.Text>
