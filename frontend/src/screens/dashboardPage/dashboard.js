@@ -13,7 +13,10 @@ const Dashboard = () => {
 				<div class='wrapper flex-grow-1'>
 					<div class='dashboardContainer'>
 						<Card>
-							<Card.Img variant='top' src='holder.js/100px160' />
+							<Card.Img
+								variant='top'
+								src='assets/images/insitu-ceramic-cluster.png'
+							/>
 							<Card.Body>
 								<Card.Title>About Archaeology</Card.Title>
 								<Card.Text>
@@ -29,7 +32,10 @@ const Dashboard = () => {
 							</Card.Body>
 						</Card>
 						<Card>
-							<Card.Img variant='top' src='holder.js/100px160' />
+							<Card.Img
+								variant='top'
+								src='assests/images/KCV-2021-excavation-block.png'
+							/>
 							<Card.Body>
 								<Card.Title>Excavation History</Card.Title>
 								<Card.Text>
@@ -46,7 +52,7 @@ const Dashboard = () => {
 							</Card.Body>
 						</Card>
 						<Card>
-							<Card.Img variant='top' src='holder.js/100px160' />
+							<Card.Img variant='top' src='assets/images/lithic1.png' />
 							<Card.Body>
 								<Card.Title>Technology</Card.Title>
 								<Card.Text>
@@ -64,7 +70,10 @@ const Dashboard = () => {
 							</Card.Body>
 						</Card>
 						<Card>
-							<Card.Img variant='top' src='holder.js/100px160' />
+							<Card.Img
+								variant='top'
+								src='assets/images/excavating-bones.png'
+							/>
 							<Card.Body>
 								<Card.Title>Artifact Gallery</Card.Title>
 								<Card.Text>
