@@ -6,6 +6,7 @@ import Loading from "../../components/loading";
 import ErrorMessage from "../../components/errorMessage";
 import { login } from "../../actions/userActions";
 import MainScreen from "../../components/MainScreen";
+import ReCAPTCHA from "react-google-recaptcha";
 import "./LoginScreen.css";
 
 function LoginScreen({ history }) {
@@ -28,6 +29,10 @@ function LoginScreen({ history }) {
 	const submitHandler = (e) => {
 		e.preventDefault();
 		dispatch(login(email, password));
+	};
+
+	const onRecapchaChange = (e) => {
+		console.log(e);
 	};
 
 	return (
@@ -55,6 +60,10 @@ function LoginScreen({ history }) {
 							onChange={(e) => setPassword(e.target.value)}
 						/>
 					</Form.Group>
+					<ReCAPTCHA
+						sitekey='6Lf_tWYdAAAAAO7C-9UBmOyGzIR0IWzY8LZiVUG4'
+						onChange={onRecapchaChange}
+					/>
 
 					<Button variant='primary' type='submit'>
 						Submit
