@@ -22,5 +22,8 @@
 	"scripts": {
 		"start": "node backend/src/server.js",
 		"heroku-postbuild": "cd frontend && yarn && yarn run build"
+	},
+	"engines": {
+		"node": "15.x"
 	}
 }
