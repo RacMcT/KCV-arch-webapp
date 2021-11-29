@@ -8,6 +8,7 @@ import fetch from "node-fetch";
 //@access          Public
 const authUser = asyncHandler(async (req, res) => {
 	const { email, password, recaptcha } = req.body;
+	console.log(recaptcha);
 
 	// Validate Human with ReCaptcha
 	const isHuman = await fetch(
