@@ -6,8 +6,8 @@
 .card-img {
 	display: flex;
 	margin: 10px;
-	width: 20%;
-	height: 20%;
+	width: 10%;
+	height: 10%;
 }
 
 @media only screen and (max-width: 768px) {
