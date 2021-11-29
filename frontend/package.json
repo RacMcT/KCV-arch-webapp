@@ -68,7 +68,7 @@
 		"@types/redux-logger": "^3.0.8",
 		"@types/socket.io-client": "^1.4.33",
 		"@types/ws": "^7.2.6",
-		"redux-devtools-extension": "^2.13.8"
+		"redux-devtools-extension": "^2.13.9"
 	},
 	"description": "y",
 	"private": true,
