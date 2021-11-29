@@ -27,7 +27,7 @@ const authUser = asyncHandler(async (req, res) => {
 			throw new Error(`Error in Google Siteverify API. ${err.message}`);
 		});
 
-	if (humanKey === null || !isHuman) {
+	if (recaptcha === null || !isHuman) {
 		throw new Error(`YOU ARE NOT A HUMAN.`);
 	}
 
