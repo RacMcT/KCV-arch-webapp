@@ -6,7 +6,29 @@ import generateToken from "../utils/generateToken.js";
 //@route           POST /api/users/login
 //@access          Public
 const authUser = asyncHandler(async (req, res) => {
-	const { email, password } = req.body;
+	const { email, password, recaptcha } = req.body;
+
+	// Validate Human with ReCaptcha
+	const isHuman = await fetch(
+		`https://www.google.com/recaptcha/api/siteverify`,
+		{
+			method: "post",
+			headers: {
+				Accept: "application/json",
+				"Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
+			},
+			body: `secret=6Lf_tWYdAAAAACyiakLgevvCAVs4WSXxF3sdhS6W&response=${recaptcha}`,
+		}
+	)
+		.then((res) => res.json())
+		.then((json) => json.success)
+		.catch((err) => {
+			throw new Error(`Error in Google Siteverify API. ${err.message}`);
+		});
+
+	if (humanKey === null || !isHuman) {
+		throw new Error(`YOU ARE NOT A HUMAN.`);
+	}
 
 	const user = await User.findOne({ email });
 
@@ -21,6 +43,8 @@ const authUser = asyncHandler(async (req, res) => {
 		res.status(401);
 		throw new Error("Invalid Email or Password");
 	}
+
+	console.log("SUCCESS!");
 });
 
 //@description     Register new user
