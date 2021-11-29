@@ -23,6 +23,6 @@
 		"heroku-postbuild": "cd frontend && yarn && yarn run build"
 	},
 	"engines": {
-		"node": "15.x"
+		"node": "^14.15.0"
 	}
 }
