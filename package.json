@@ -16,8 +16,7 @@
 		"module": "^1.2.5",
 		"mongoose": "^6.0.13",
 		"mysql": "^2.18.1",
-		"nodemon": "^2.0.15",
-		"type": "module"
+		"nodemon": "^2.0.15"
 	},
 	"scripts": {
 		"start": "node backend/src/server.js",
