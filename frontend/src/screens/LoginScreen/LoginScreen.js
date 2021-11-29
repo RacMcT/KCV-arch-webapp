@@ -12,6 +12,7 @@ import "./LoginScreen.css";
 function LoginScreen({ history }) {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [recaptcha, onRecapchaChange] = useState("");
 
 	const dispatch = useDispatch();
 
@@ -28,11 +29,7 @@ function LoginScreen({ history }) {
 
 	const submitHandler = (e) => {
 		e.preventDefault();
-		dispatch(login(email, password));
-	};
-
-	const onRecapchaChange = (e) => {
-		console.log(e);
+		dispatch(login(email, password, recaptcha));
 	};
 
 	return (
@@ -62,7 +59,7 @@ function LoginScreen({ history }) {
 					</Form.Group>
 					<ReCAPTCHA
 						sitekey='6Lf_tWYdAAAAAO7C-9UBmOyGzIR0IWzY8LZiVUG4'
-						onChange={onRecapchaChange}
+						onChange={(e) => onRecapchaChange(e)}
 					/>
 
 					<Button variant='primary' type='submit'>
